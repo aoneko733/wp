@@ -1,0 +1,35 @@
+@charset "utf-8";
+/*
+theme Name: wp-test-2018
+Author: aoneko733
+Description: original theme
+version： 1.0.0
+*/
+
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  @include clearfix;
+  li {
+    font: {
+      size: 20px;
+      weight: bold;
+    }
+    list-style-type: none;
+  }
+}
