@@ -1,27 +1,26 @@
 @charset "UTF-8";
-/*
-theme Name: wp-test-2018
-Author: aoneko733
-Description: original theme
-version： 1.0.0
-*/
-* {
+body {
+  color: #333;
+  font-family: 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'Noto Sans Japanese', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-ul:after {
-  clear: both;
-  content: "";
-  display: block;
-  font-size: 0;
-  height: 0;
-  visibility: hidden;
-}
-
-ul li {
-  font-size: 20px;
+h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  list-style-type: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+header {
+  border-bottom: solid 1px #ddd;
+}
+
+footer {
+  border-top: solid 1px #ddd;
 }
