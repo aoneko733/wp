@@ -7,7 +7,7 @@ gulp.task("sass", function() {
     .pipe(sass({
       outputStyle:'expanded'
     }))
-    .pipe(gulp.dest('./wordpress/wp-content/themes/wp-test-2018/css'));
+    .pipe(gulp.dest('./wordpress/wp-content/themes/wp-test-2018/'));
 });
 
 gulp.task("default", ['sass']);
