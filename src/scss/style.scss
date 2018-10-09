@@ -1,3 +1,10 @@
+/*
+Theme Name: wp-test
+Author: aoneko733
+Description: aoneko733
+Version: 1.0
+*/
+
 body {
   color: #333;
   font: {
@@ -5,6 +12,12 @@ body {
     size: 16px;
   }
   line-height: 1.7;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -18,11 +31,51 @@ img {
   max-width: 100%;
 }
 
-
 header {
   border-bottom: solid 1px #ddd;
 }
- 
+
 footer {
   border-top: solid 1px #ddd;
+}
+.contents,
+#sidebar {
+  height: 800px;
+}
+
+header {
+  background-color: #888;
+}
+
+.header-inner {
+  background-color: #ccc;
+  height: 200px;
+}
+
+.container {
+  background-color: #9db2ea;
+}
+
+.contents {
+  background-color: #a5e2ff;
+}
+
+footer {
+  background-color: #777;
+}
+
+.footer-inner {
+  background-color: #ddd;
+  height: 250px;
+}
+
+.header-inner,
+.container,
+.footer-inner {
+  margin: {
+    right: auto;
+    left: auto;
+  }
+  max-width: 1200px;
+  padding: 10px;
 }
