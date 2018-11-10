@@ -61,7 +61,8 @@
 
 						<!-- ▼ブログ記事一覧 : 開始 -->
 						<?php if ( have_posts() ) : ?>
-							<?php while ( have_posts() ) the_post(); ?>
+						<?php while ( have_posts() ) :
+						the_post(); ?>
 						<article id="<?php the_ID(); ?>" <?php post_class(); ?>>
 							<header class="entry-header">
 								<h1 class="entry-title">
@@ -91,6 +92,7 @@
             <!-- ▲ブログ記事一覧 : 終了 -->
 
 						<?php endwhile; ?>
+					<?php endif; ?>
 
 						<!--▼ ページネーション : 開始-->
 						<nav class="navigation pagination" role="navigation">
