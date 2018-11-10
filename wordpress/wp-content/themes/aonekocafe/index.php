@@ -60,69 +60,37 @@
 						</header><!--/.page-header-->
 
 						<!-- ▼ブログ記事一覧 : 開始 -->
-
-						<!--▼一記事目 : 開始-->
-						<article id="post-1" class="post hentry">
-							<header class="entry-header">
-								<h1 class="entry-title"><a href="../blog/article01.html">新メニュー・生チョコのタルト</a></h1>
-								<div class="entry-meta">
-									<span class="date"><time class="entry-date">2015年3月2日</time></span>
-									<span class="categories-links info"><a href="#" rel="category">新メニュー情報</a></span>
-								</div>
-							</header><!--/.entry-header-->
-
-							<div class="entry-content">
-								<div class="thumbnail">
-									<img src="../images/content/menu08-thumbnail01.png" alt="新メニュー・生チョコのタルト" width="175">
-								</div>
-								<p>スイーツメニューもリニューアルしました！<br>
-								おすすめは本場ベルギー製のチョコレートをたっぷり使った生チョコのタルトです。<br>
-								濃厚な味わいが自慢のこのケーキ、コーヒーとの相性も抜群です。<br>
-								ぜひご賞味ください！
-								</p>
-							</div><!--/.entry-content-->
-
-							<footer class="entry-footer">
-								<span class="comments-link"><a href="#">1件のコメント</a></span>
-								<span class="tag-links"><a href="#" rel="tag">チョコレート</a></span>
-							</footer><!--/.entry-footer-->
-
-						</article>
-						<!--▲一記事目 : 終了-->
-
-						<!--▼二記事目 : 開始-->
-						<article id="post-2" class="post hentry">
+						<?php if ( have_posts() ) : ?>
+							<?php while ( have_posts() ) the_post(); ?>
+						<article id="<?php the_ID(); ?>" <?php post_class(); ?>>
 							<header class="entry-header">
 								<h1 class="entry-title">
-									<a href="../blog/article02.html">本日リニューアルオープン！</a>
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 								</h1>
-							</header><!--/.entry-header-->
-
-							<div class="entry-meta">
-								<span class="date"><time class="entry-date">2015年3月1日</time></span>
-								<span class="categories-links limited"><a href="#" rel="category">スタッフ日記</a></span>
-							</div><!--/.entry-meta-->
-
-							<div class="entry-content">
-								<div class="thumbnail">
-									<img src="../images/content/article01-thumbnail01.png" alt="本日リニューアルオープン！">
+								<div class="entry-meta">
+									<span class="date">
+										<time class="entry-date">
+											<?php the_time('Y年n月j日'); ?>
+										</time>
+									</span>
+									<span class="categories-links ">
+										<?php the_category(','); ?>
+									</span>
 								</div>
-								<p>Ozone Cafeは1ヶ月半の改装工事が終わり、本日リニューアルオープン！
-								<br> 以前とは雰囲気も少し変わり、明るく開放感のあるお店に生まれ変わりました。
-								<br> もちろんコーヒーやスイーツへのこだわりは変わりません。
-								<br> これからも当店をよろしくお願いいたします！
-								</p>
-							</div><!--/.entry-content-->
-
+							</header>
+							<div class="entry-content">
+								<?php the_content('&raquo;詳しく見る'); ?>
+							</div>
 							<footer class="entry-footer">
-								<span class="comments-link"><a href="#">2件のコメント</a></span>
-								<span class="tag-links"><a href="#" rel="tag"></a></span>
-							</footer><!--/.entry-footer-->
-
+								<span class="comments-link">
+									<a href="#">1件のコメント</a>
+								</span>
+								<?php the_tags('<span class="tag-links">', ',', '</span>'); ?>
+							</footer>
 						</article>
-						<!--▲二記事目 : 終了-->
+            <!-- ▲ブログ記事一覧 : 終了 -->
 
-						<!-- ▲ブログ記事一覧 : 終了 -->
+						<?php endwhile; ?>
 
 						<!--▼ ページネーション : 開始-->
 						<nav class="navigation pagination" role="navigation">
